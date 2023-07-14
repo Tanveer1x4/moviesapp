@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+.Banner-Card{
+  width: 100vw;
+  height:70vh;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+  position: relative;
+ color: rgb(45, 152, 24);
+ justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Banner-Img{
+  width:100vw;
+  height:70vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Banner-Title{
+  position: absolute;
+  top: 40vh;
+  left: 5vw;
   color: white;
 }
+.Banner-Text{
+  position: absolute;
+  top: 45vh;
+  left:7vw;
+  color: white;
+  height: 4.5rem;
+  overflow: hidden;
+  margin-right: 100px;
+  margin-top: 2px;
+}
+@media screen and (max-width:400px) {
+  .banner-card{
+    height:30vh;
+  }
+  .banner-img{
+    height: 30vh;
+  }
+  .banner-title{
+    top: 12vh;
+    left: 5vw;
+  }
+  .banner-text{
+    top: 17vh;
+    left: 5vw;
+  }
 
-.App-link {
-  color: #61dafb;
+}
+.Movie-List {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Movie-Element {
+  width: 100%;
+  
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.Movie-Img {
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.Movie-Element:hover .Movie-Img {
+  transform: scale(1.1);
+}
+
+.Movie-Details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Movie-Element:hover .Movie-Details {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.Movie-Title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.Movie-Description {
+  font-size: 14px;
+  margin-bottom: 0;
+  max-height: 6em; /* Set a maximum height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Set line height for multiple lines */
+}
+
+
+/* Update background color and text color */
+.Movie-Element {
+  background-color: gray;
+}
+
+.Movie-Title,
+.Movie-Description {
+  color: white;
 }
